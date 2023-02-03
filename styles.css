@@ -1,0 +1,29 @@
+html,
+body {
+  box-sizing: border-box;
+  background-color: rgb(128, 64, 34);
+}
+
+#library_container {
+  display: flex;
+  height: 100vh;
+  flex-direction: column;
+  text-align: center;
+  justify-content: center;
+}
+
+#book_add__button {
+  background-color: green;
+  color: white;
+  text-decoration: none;
+  padding-inline: 15px;
+  padding-block: 5px;
+  border: 2px solid white;
+  border-radius: 8px;
+  transition: all 0.2s ease-in-out;
+  align-self: center;
+  cursor: pointer;
+}
+#book_add__button:hover {
+  background-color: rgb(1, 96, 1);
+}/*# sourceMappingURL=styles.css.map */
