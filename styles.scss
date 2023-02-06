@@ -38,14 +38,72 @@ body {
 .width-extend {
     width: 70% !important;
     height: 70% !important;
-    color: transparent !important;
 
     &:hover {
         background-color: rgb(0, 135, 0) !important;
         border: 2px solid rgb(0, 135, 0) !important;
+        cursor: unset !important;
+    }
+}
+
+.width-hide {
+
+    &:hover {
+        background-color: rgb(0, 135, 0) !important;
+        border: 2px solid rgb(0, 135, 0) !important;
+        cursor: unset !important;
     }
 }
 
 .button-hide {
     display: none;
+}
+
+.book-add-form {
+    display: none;
+
+    h1 {
+        margin-block: 0 !important;
+    }
+}
+
+.book-add-form--display {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: space-evenly;
+    height: 100%;
+
+    .form-buttons {
+        text-decoration: none;
+        color: white;
+        padding-inline: 10px;
+        padding-block: 5px;
+        border-radius: 5px;
+        cursor: pointer;
+        // max-width: 100px;
+        // min-width: 100px;
+    }
+
+    .form-buttons:first-child {
+        margin-right: 20px;
+        border: 2px solid white;
+    }
+
+    .form-buttons:last-child {
+        border: 2px solid red;
+    }
+}
+
+.book-form-field {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+input {
+    display: inline-block;
+    width: 50%;
 }

@@ -12,8 +12,27 @@
 
 <body>
     <div id="library_container">
-        <button href="#" id="book_add__button" href=""><span id="book_add__text"><i class="fa-solid fa-circle-plus"></i> Add Book</span></button>
+        <button href="#" id="book_add__button" href="">
+            <span id="book_add__text"><i class="fa-solid fa-circle-plus"></i> Add Book</span>
+            <form name="book-add-form" class="book-add-form">
+                <h1>HElloooooooo</h1>
+                <div class="book-form-field"><label for="book_title">Book Title</label><input id="book_title"
+                        type="text" name="book_title"></div>
+                <div><input type="password" required></div>
+                <div><input type="text"></div>
+                <div><input type="text"></div>
+                <div><a class="form-buttons" onclick="submitForm()" form="book-add-form" type="submit" href="#">Add
+                        Book</a><a id="form_cancel_button" class="form-buttons" form="book-add-form"
+                        onclick="event.stopPropagation()">Cancel</a>
+                </div>
+
+            </form>
+        </button>
+        <div>
+            <p>fdsfdsfds</p>
+        </div>
     </div>
+
     <script src="app.js"></script>
 </body>
 
