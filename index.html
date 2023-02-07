@@ -17,10 +17,10 @@
             <form name="book-add-form" class="book-add-form">
                 <h1>Add Your Book</h1>
                 <div><input id="book_title" type="text" name="book_title" placeholder="Title"></div>
-                <div><input type="text" placeholder="Author"></div>
-                <div><input type="text" placeholder="Pages"></div>
+                <div><input id="book_author" type="text" placeholder="Author"></div>
+                <div><input id="book_pages" type="text" placeholder="Pages"></div>
                 <div class="checkbox-container"><span style="margin-right: 10px;">Have you read it?</span><input
-                        type="checkbox" onclick="event.stopPropagation()"></div>
+                        type="checkbox" id="book_read" onclick="event.stopPropagation()"></div>
                 <div><a class="form-buttons" onclick="submitForm(); event.stopPropagation()" form="book-add-form" type="submit" href="#">Add
                         Book</a><a id="form_cancel_button" class="form-buttons" form="book-add-form"
                         onclick="event.stopPropagation()">Cancel</a>
@@ -29,7 +29,7 @@
             </form>
         </button>
         <div>
-            <p>fdsfdsfds</p>
+            <h2 id="bookdisplay_title">Your Library:</h2>
         </div>
     </div>
 
