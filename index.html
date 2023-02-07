@@ -10,18 +10,18 @@
     <script src="https://kit.fontawesome.com/05161720c0.js" crossorigin="anonymous"></script>
 </head>
 
-<body>
+<body onclick="event.stopPropagation()">
     <div id="library_container">
-        <button href="#" id="book_add__button" href="">
+        <button href="#" id="book_add__button" href="" onclick="event.stopPropagation()">
             <span id="book_add__text"><i class="fa-solid fa-circle-plus"></i> Add Book</span>
             <form name="book-add-form" class="book-add-form">
-                <h1>HElloooooooo</h1>
-                <div class="book-form-field"><label for="book_title">Book Title</label><input id="book_title"
-                        type="text" name="book_title"></div>
-                <div><input type="password" required></div>
-                <div><input type="text"></div>
-                <div><input type="text"></div>
-                <div><a class="form-buttons" onclick="submitForm()" form="book-add-form" type="submit" href="#">Add
+                <h1>Add Your Book</h1>
+                <div><input id="book_title" type="text" name="book_title" placeholder="Title"></div>
+                <div><input type="text" placeholder="Author"></div>
+                <div><input type="text" placeholder="Pages"></div>
+                <div class="checkbox-container"><span style="margin-right: 10px;">Have you read it?</span><input
+                        type="checkbox" onclick="event.stopPropagation()"></div>
+                <div><a class="form-buttons" onclick="submitForm(); event.stopPropagation()" form="book-add-form" type="submit" href="#">Add
                         Book</a><a id="form_cancel_button" class="form-buttons" form="book-add-form"
                         onclick="event.stopPropagation()">Cancel</a>
                 </div>

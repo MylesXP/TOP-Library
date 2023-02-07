@@ -92,7 +92,45 @@ body {
   position: relative;
 }
 
-input {
+input[type=text] {
   display: inline-block;
   width: 50%;
+  background-color: transparent;
+  border: none;
+  border-bottom: 2px solid lightgray;
+  color: white;
+  transition: all 200ms ease-in-out;
+}
+input[type=text]:focus {
+  outline: none;
+  border-bottom-color: white;
+}
+input[type=text]:focus::-moz-placeholder {
+  color: transparent;
+}
+input[type=text]:focus:-ms-input-placeholder {
+  color: transparent;
+}
+input[type=text]:focus::placeholder {
+  color: transparent;
+}
+input[type=text]::-moz-placeholder {
+  color: lightgray;
+}
+input[type=text]:-ms-input-placeholder {
+  color: lightgray;
+}
+input[type=text]::placeholder {
+  color: lightgray;
+}
+
+.checkbox-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+input[type=checkbox] {
+  width: 20px;
+  height: 20px;
 }/*# sourceMappingURL=styles.css.map */

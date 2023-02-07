@@ -4,23 +4,32 @@ let addBookForm = document.getElementsByClassName('book-add-form')[0];
 let formCancelButton = document.getElementById('form_cancel_button');
 
 
-addBookButton.addEventListener('click', () => {
+let addButtonEL = addBookButton.addEventListener('click', () => {
     addBookButton.classList.add('width-extend')
     addBookText.classList.add('button-hide')
     setTimeout(() => {
         addBookForm.classList.add('book-add-form--display')
     }, 700)
     console.log('clicked')
-},false)
+})
 
-formCancelButton.addEventListener('click', () => {
-    // addBookButton.classList.remove('book-add-form');
+let cancelButtonEL = formCancelButton.addEventListener('click', () => {
     addBookButton.classList.remove('width-extend')
     setTimeout(() => {
         addBookText.classList.remove('button-hide')
     }, 700);
     addBookForm.classList.remove('book-add-form--display')
 })
+
+document.body.addEventListener('click',() => {
+    addBookButton.classList.remove('width-extend')
+    addBookForm.classList.remove('book-add-form--display')
+    setTimeout(() => {
+        addBookText.classList.remove('button-hide')
+    }, 700);
+})
+
+
 
 
 
