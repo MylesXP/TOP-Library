@@ -1,140 +1,69 @@
 html,
 body {
   box-sizing: border-box;
-  background-color: rgb(128, 64, 34);
+  background-color: #323940;
+  margin: 0;
+  font-family: "Courier New", Courier, monospace;
 }
 
-#library_container {
+#nav_container {
+  background-color: black;
+}
+
+#nav_items_container {
+  list-style: none;
   display: flex;
-  height: 100vh;
-  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  padding-left: 0;
+  padding-block: 20px;
+  padding-inline: 10px;
+  margin: 0;
+}
+
+.nav-items {
+  color: white;
+}
+
+#nav_logo {
+  font-size: 30px;
+}
+
+#mode_toggler {
+  cursor: pointer;
+  background-color: #323940;
+  color: white;
+  border-radius: 4px;
+  padding-block: 5px;
+  padding-inline: 10px;
+  border: none;
+  transition: all 0.2s ease-in-out;
+}
+#mode_toggler:hover {
+  color: black;
+  background: white;
+}
+
+#website_title {
+  color: white;
   text-align: center;
-  justify-content: center;
+  padding-top: 10%;
 }
 
 #book_add__button {
-  font-size: 0.8rem;
-  background-color: rgb(0, 135, 0);
   color: white;
-  text-decoration: none;
-  padding-inline: 15px;
+  border: 2px solid white;
+  border-radius: 10px;
+  background-color: transparent;
   padding-block: 5px;
-  border: 2px solid rgb(0, 135, 0);
-  border-radius: 8px;
-  outline: 2px solid white;
-  outline-offset: -4px;
-  transition: width 250ms ease-in-out, background-color 250ms ease-in-out, border 250ms ease-in-out, height 700ms ease-in-out, color 200ms ease-in-out;
-  width: 150px;
-  align-self: center;
+  font-family: "Courier New", Courier, monospace;
   cursor: pointer;
-  height: 40px;
+  outline: solid transparent;
+  transition: all 0.2s ease-in-out;
 }
 #book_add__button:hover {
-  background-color: rgb(0, 118, 0);
-  border: 2px solid rgb(0, 118, 0);
-}
-
-.width-extend {
-  width: 70% !important;
-  height: 70% !important;
-}
-.width-extend:hover {
-  background-color: rgb(0, 135, 0) !important;
-  border: 2px solid rgb(0, 135, 0) !important;
-  cursor: unset !important;
-}
-
-.width-hide:hover {
-  background-color: rgb(0, 135, 0) !important;
-  border: 2px solid rgb(0, 135, 0) !important;
-  cursor: unset !important;
-}
-
-.button-hide {
-  display: none;
-}
-
-.book-add-form {
-  display: none;
-}
-.book-add-form h1 {
-  margin-block: 0 !important;
-}
-
-.book-add-form--display {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-evenly;
-  align-items: space-evenly;
-  height: 100%;
-}
-.book-add-form--display .form-buttons {
-  text-decoration: none;
-  color: white;
-  padding-inline: 10px;
-  padding-block: 5px;
-  border-radius: 5px;
-  cursor: pointer;
-}
-.book-add-form--display .form-buttons:first-child {
-  margin-right: 20px;
+  background-color: black;
   border: 2px solid white;
-}
-.book-add-form--display .form-buttons:last-child {
-  border: 2px solid red;
-}
-
-.book-form-field {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  position: relative;
-}
-
-input[type=text] {
-  display: inline-block;
-  width: 50%;
-  background-color: transparent;
-  border: none;
-  border-bottom: 2px solid lightgray;
-  color: white;
-  transition: all 200ms ease-in-out;
-}
-input[type=text]:focus {
-  outline: none;
-  border-bottom-color: white;
-}
-input[type=text]:focus::-moz-placeholder {
-  color: transparent;
-}
-input[type=text]:focus:-ms-input-placeholder {
-  color: transparent;
-}
-input[type=text]:focus::placeholder {
-  color: transparent;
-}
-input[type=text]::-moz-placeholder {
-  color: lightgray;
-}
-input[type=text]:-ms-input-placeholder {
-  color: lightgray;
-}
-input[type=text]::placeholder {
-  color: lightgray;
-}
-
-.checkbox-container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-input[type=checkbox] {
-  width: 20px;
-  height: 20px;
-}
-
-#bookdisplay_title {
-  color: white;
+  border-radius: 10px;
+  outline: solid black 8px;
 }/*# sourceMappingURL=styles.css.map */

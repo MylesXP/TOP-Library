@@ -1,41 +1,35 @@
+// Declaring Variables
 let addBookButton = document.getElementById('book_add__button');
-let addBookText = document.getElementById('book_add__text');
-let addBookForm = document.getElementsByClassName('book-add-form')[0];
-let formTitle = document.getElementById('book_title');
-let formAuthor = document.getElementById('book_author');
-let formPages = document.getElementById('book_pages');
-let formRead = document.getElementById('book_read');
-let formCancelButton = document.getElementById('form_cancel_button');
+let modeToggler = document.getElementById('mode_toggler');
+let modeTogglerIcon = document.getElementById('mode_toggler__icon')
+// Creating functions for expanding and closing button form logic
+
+let toggleMode = function () {
+    if(modeTogglerIcon.classList.contains('fa-moon')){
+        modeTogglerIcon.classList.remove('fa-moon');
+        modeTogglerIcon.classList.add('fa-sun');
+    } else if(modeTogglerIcon.classList.contains('fa-sun')){
+        modeTogglerIcon.classList.remove('fa-sun');
+        modeTogglerIcon.classList.add('fa-moon');
+    }
+}
 
 
-let addButtonEL = addBookButton.addEventListener('click', () => {
-    addBookButton.classList.add('width-extend')
-    addBookText.classList.add('button-hide')
-    setTimeout(() => {
-        addBookForm.classList.add('book-add-form--display')
-    }, 700)
-    console.log('clicked')
-})
+let eb = function expandButton() {
+    
+}
 
 
+let dcf = function docCloseForm() {
+    
+}
 
-// addButtonEL.removeEventListener('click',addButtonEL)
+// Adding event listeners to buttons with above functions as arguments
+addBookButton.addEventListener('click', eb)
 
-let cancelButtonEL = formCancelButton.addEventListener('click', () => {
-    addBookButton.classList.remove('width-extend')
-    setTimeout(() => {
-        addBookText.classList.remove('button-hide')
-    }, 700);
-    addBookForm.classList.remove('book-add-form--display')
-})
+modeToggler.addEventListener('click', toggleMode)
 
-document.body.addEventListener('click',() => {
-    addBookButton.classList.remove('width-extend')
-    addBookForm.classList.remove('book-add-form--display')
-    setTimeout(() => {
-        addBookText.classList.remove('button-hide')
-    }, 700);
-})
+document.body.addEventListener('click', dcf)
 
 
 

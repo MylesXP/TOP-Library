@@ -1,142 +1,210 @@
 html,
 body {
     box-sizing: border-box;
-    background-color: rgb(128, 64, 34);
+    background-color: #323940;
+    margin: 0;
+    font-family: 'Courier New', Courier, monospace;
 }
 
-#library_container {
-    display: flex;
-    height: 100vh;
-    flex-direction: column;
-    text-align: center;
-    justify-content: center;
+#nav_container {
+    background-color: black;
 }
+
+#nav_items_container {
+    list-style: none;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-left: 0;
+    padding-block: 20px;
+    padding-inline: 10px;
+    margin: 0;
+}
+
+.nav-items {
+    color: white;
+}
+
+#nav_logo {
+    font-size: 30px;
+}
+
+#mode_toggler{
+    cursor: pointer;
+    background-color: #323940;
+    color: white;
+    border-radius: 4px;
+    padding-block: 5px;
+    padding-inline: 10px;
+    border: none;
+    transition: all .2s ease-in-out;
+    &:hover{
+        color: black;
+        background: white;
+    }
+}
+
+#website_title {
+    color: white;
+    text-align: center;
+    padding-top: 10%;
+}
+
+#library_container {}
+
 
 #book_add__button {
-    font-size: .8rem;
-    background-color: rgb(0, 135, 0);
     color: white;
-    text-decoration: none;
-    padding-inline: 15px;
-    padding-block: 5px;
-    border: 2px solid rgb(0, 135, 0);
-    border-radius: 8px;
-    outline: 2px solid white;
-    outline-offset: -4px;
-    transition: width 250ms ease-in-out, background-color 250ms ease-in-out, border 250ms ease-in-out, height 700ms ease-in-out, color 200ms ease-in-out;
-    width: 150px;
-    align-self: center;
-    cursor: pointer;
-    height: 40px;
-
-    &:hover {
-        background-color: rgb(0, 118, 0);
-        border: 2px solid rgb(0, 118, 0);
-    }
-}
-
-.width-extend {
-    width: 70% !important;
-    height: 70% !important;
-
-    &:hover {
-        background-color: rgb(0, 135, 0) !important;
-        border: 2px solid rgb(0, 135, 0) !important;
-        cursor: unset !important;
-    }
-}
-
-.width-hide {
-
-    &:hover {
-        background-color: rgb(0, 135, 0) !important;
-        border: 2px solid rgb(0, 135, 0) !important;
-        cursor: unset !important;
-    }
-}
-
-.button-hide {
-    display: none;
-}
-
-.book-add-form {
-    display: none;
-
-    h1 {
-        margin-block: 0 !important;
-    }
-}
-
-.book-add-form--display {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-evenly;
-    align-items: space-evenly;
-    height: 100%;
-
-    .form-buttons {
-        text-decoration: none;
-        color: white;
-        padding-inline: 10px;
-        padding-block: 5px;
-        border-radius: 5px;
-        cursor: pointer;
-        // max-width: 100px;
-        // min-width: 100px;
-    }
-
-    .form-buttons:first-child {
-        margin-right: 20px;
-        border: 2px solid white;
-    }
-
-    .form-buttons:last-child {
-        border: 2px solid red;
-    }
-}
-
-.book-form-field {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    position: relative;
-}
-
-input[type="text"] {
-    display: inline-block;
-    width: 50%;
+    border: 2px solid white;
+    border-radius: 10px;
     background-color: transparent;
-    border: none;
-    border-bottom: 2px solid lightgray;
-    color: white;
-    transition: all 200ms ease-in-out;
-    &:focus{
-        outline: none;
-        border-bottom-color: white;
-        &::placeholder{
-            color: transparent;
-        }
-    }
+    padding-block: 5px;
+    font-family: 'Courier New', Courier, monospace;
+    cursor: pointer;
+    outline: solid transparent;
+    transition: all .2s ease-in-out;
 
-    &::placeholder{
-        color: lightgray;
+    &:hover {
+        background-color: black;
+        border: 2px solid white;
+        border-radius: 10px;
+        outline: solid black 8px;
     }
 }
 
-.checkbox-container{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
 
-input[type="checkbox"] {
-    width: 20px;
-    height: 20px;
-}
+// #library_container {
+//     display: flex;
+//     height: 100vh;
+//     flex-direction: column;
+//     text-align: center;
+//     justify-content: center;
+// }
+// #book_add__button {
+//     font-size: .8rem;
+//     background-color: rgb(0, 135, 0);
+//     color: white;
+//     text-decoration: none;
+//     padding-inline: 15px;
+//     padding-block: 5px;
+//     border: 2px solid rgb(0, 135, 0);
+//     border-radius: 8px;
+//     outline: 2px solid white;
+//     outline-offset: -4px;
+//     transition: width 250ms ease-in-out, background-color 250ms ease-in-out, border 250ms ease-in-out, height 700ms ease-in-out, color 200ms ease-in-out;
+//     width: 150px;
+//     align-self: center;
+//     cursor: pointer;
+//     height: 40px;
+
+//     &:hover {
+//         background-color: rgb(0, 118, 0);
+//         border: 2px solid rgb(0, 118, 0);
+//     }
+// }
+
+// .width-extend {
+//     width: 70% !important;
+//     height: 70% !important;
+
+//     &:hover {
+//         background-color: rgb(0, 135, 0) !important;
+//         border: 2px solid rgb(0, 135, 0) !important;
+//         cursor: unset !important;
+//     }
+// }
+
+// .width-hide {
+
+//     &:hover {
+//         background-color: rgb(0, 135, 0) !important;
+//         border: 2px solid rgb(0, 135, 0) !important;
+//         cursor: unset !important;
+//     }
+// }
+
+// .button-hide {
+//     display: none;
+// }
+
+// .book-add-form {
+//     display: none;
+
+//     h1 {
+//         margin-block: 0 !important;
+//     }
+// }
+
+// .book-add-form--display {
+//     display: flex;
+//     flex-direction: column;
+//     justify-content: space-evenly;
+//     align-items: space-evenly;
+//     height: 100%;
+
+//     .form-buttons {
+//         text-decoration: none;
+//         color: white;
+//         padding-inline: 10px;
+//         padding-block: 5px;
+//         border-radius: 5px;
+//         cursor: pointer;
+//         // max-width: 100px;
+//         // min-width: 100px;
+//     }
+
+//     .form-buttons:first-child {
+//         margin-right: 20px;
+//         border: 2px solid white;
+//     }
+
+//     .form-buttons:last-child {
+//         border: 2px solid red;
+//     }
+// }
+
+// .book-form-field {
+//     display: flex;
+//     flex-direction: column;
+//     justify-content: center;
+//     align-items: center;
+//     position: relative;
+// }
+
+// input[type="text"] {
+//     display: inline-block;
+//     width: 50%;
+//     background-color: transparent;
+//     border: none;
+//     border-bottom: 2px solid lightgray;
+//     color: white;
+//     transition: all 200ms ease-in-out;
+//     &:focus{
+//         outline: none;
+//         border-bottom-color: white;
+//         &::placeholder{
+//             color: transparent;
+//         }
+//     }
+
+//     &::placeholder{
+//         color: lightgray;
+//     }
+// }
+
+// .checkbox-container{
+//     display: flex;
+//     justify-content: center;
+//     align-items: center;
+// }
+
+// input[type="checkbox"] {
+//     width: 20px;
+//     height: 20px;
+// }
 
 
-#bookdisplay_title{
-    color: white;
-    
-}
+// #bookdisplay_title{
+//     color: white;
+
+// }

@@ -5,32 +5,26 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>eLibrary</title>
+    <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon">
     <link rel="stylesheet" href="styles.css">
     <script src="https://kit.fontawesome.com/05161720c0.js" crossorigin="anonymous"></script>
 </head>
 
-<body onclick="event.stopPropagation()">
+<body>
+    <div id="nav_container">
+        <nav>
+            <ul id="nav_items_container">
+                <li class="nav-items" id="nav_logo">eLibrary</li>
+                <li class="nav-items" ><button id="mode_toggler"><i id="mode_toggler__icon"class="fa-solid fa-moon fa-2x"></i></button></li>
+            </ul>
+        </nav>
+    </div>
+    <h1 id="website_title">Welcome to Your Personal Online Library!</h1>
+    <div style="text-align: center;"><button id="book_add__button"><i class="fa-solid fa-plus"></i> Add Book</button></div>
     <div id="library_container">
-        <button href="#" id="book_add__button" href="" onclick="event.stopPropagation()">
-            <span id="book_add__text"><i class="fa-solid fa-circle-plus"></i> Add Book</span>
-            <form name="book-add-form" class="book-add-form">
-                <h1>Add Your Book</h1>
-                <div><input id="book_title" type="text" name="book_title" placeholder="Title"></div>
-                <div><input id="book_author" type="text" placeholder="Author"></div>
-                <div><input id="book_pages" type="text" placeholder="Pages"></div>
-                <div class="checkbox-container"><span style="margin-right: 10px;">Have you read it?</span><input
-                        type="checkbox" id="book_read" onclick="event.stopPropagation()"></div>
-                <div><a class="form-buttons" onclick="submitForm(); event.stopPropagation()" form="book-add-form" type="submit" href="#">Add
-                        Book</a><a id="form_cancel_button" class="form-buttons" form="book-add-form"
-                        onclick="event.stopPropagation()">Cancel</a>
-                </div>
 
-            </form>
-        </button>
-        <div>
-            <h2 id="bookdisplay_title">Your Library:</h2>
-        </div>
+
     </div>
 
     <script src="app.js"></script>
