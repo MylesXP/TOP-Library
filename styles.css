@@ -37,11 +37,17 @@ body {
   padding-block: 5px;
   padding-inline: 10px;
   border: none;
-  transition: all 0.2s ease-in-out;
+  transition: all 200ms ease-in-out;
 }
 #mode_toggler:hover {
   color: black;
   background: white;
+}
+#mode_toggler > i {
+  transition: all 200ms ease-in-out;
+}
+#mode_toggler:hover > i {
+  transform: rotate(360deg);
 }
 
 #website_title {
@@ -59,11 +65,16 @@ body {
   font-family: "Courier New", Courier, monospace;
   cursor: pointer;
   outline: solid transparent;
-  transition: all 0.2s ease-in-out;
+  transition: all 200ms ease-in-out;
 }
 #book_add__button:hover {
   background-color: black;
   border: 2px solid white;
   border-radius: 10px;
   outline: solid black 8px;
+}
+
+#overlay {
+  display: fixed;
+  background-color: rgba(0, 0, 0, 0.5);
 }/*# sourceMappingURL=styles.css.map */
