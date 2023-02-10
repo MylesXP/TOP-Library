@@ -1,7 +1,14 @@
 // Declaring Variables
 let addBookButton = document.getElementById('book_add__button');
 let modeToggler = document.getElementById('mode_toggler');
-let modeTogglerIcon = document.getElementById('mode_toggler__icon')
+let modeTogglerIcon = document.getElementById('mode_toggler__icon');
+let overlay = document.getElementById('overlay');
+let formCloseButton = document.getElementById('close_button');
+let formTitle = document.getElementById('form_book_title');
+let formAuthor = document.getElementById('form_author');
+let formPages = document.getElementById('form_pages');
+let formAddButton = document.getElementById('form_add_button');
+let formRead = document.getElementById('read_toggle')
 // Creating functions for expanding and closing button form logic
 
 let toggleMode = function () {
@@ -19,24 +26,32 @@ let toggleMode = function () {
 }
 
 
-let eb = function expandButton() {
-    
+let sf = function showForm() {
+    overlay.classList.remove('overlay-hide');
+    overlay.classList.add('overlay-show');
 }
 
+let ho = function hideOverlay() {
+    overlay.classList.remove('overlay-show');
+    overlay.classList.add('overlay-hide');
+    console.log('clicked');
+}
 
-let dcf = function docCloseForm() {
-    
+let cb = function closeButton() {
+    overlay.classList.remove('overlay-show');
+    overlay.classList.add('overlay-hide');
 }
 
 // Adding event listeners to buttons with above functions as arguments
-addBookButton.addEventListener('click', eb)
+addBookButton.addEventListener('click', sf);
 
-modeToggler.addEventListener('click', toggleMode)
+formAddButton.addEventListener('click', submitForm())
 
-document.body.addEventListener('click', dcf)
+modeToggler.addEventListener('click', toggleMode);
 
+overlay.addEventListener('click', ho);
 
-
+formCloseButton.addEventListener('click', cb)
 
 
 let myLibrary = [];
@@ -72,10 +87,6 @@ function submitForm() {
 
 function addBookToLibrary() {
   // do stuff here
-}
-
-function childClicked() {
-    console.log('child clicked')
 }
 
 
