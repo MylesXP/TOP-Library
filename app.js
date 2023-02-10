@@ -8,9 +8,13 @@ let toggleMode = function () {
     if(modeTogglerIcon.classList.contains('fa-moon')){
         modeTogglerIcon.classList.remove('fa-moon');
         modeTogglerIcon.classList.add('fa-sun');
+        document.body.classList.add('light-mode')
+        document.body.style.backgroundColor = 'white';
     } else if(modeTogglerIcon.classList.contains('fa-sun')){
         modeTogglerIcon.classList.remove('fa-sun');
         modeTogglerIcon.classList.add('fa-moon');
+        document.body.classList.remove('light-mode');
+        document.body.style.backgroundColor = '#323940';
     }
 }
 
