@@ -25,6 +25,13 @@ body {
   border-radius: 10px;
   outline: solid rgb(180, 180, 180) 8px;
 }
+.light-mode .footer {
+  background-color: gainsboro;
+}
+.light-mode .footer > h4,
+.light-mode .footer a {
+  color: rgb(30, 30, 30);
+}
 
 #nav_container {
   background-color: black;

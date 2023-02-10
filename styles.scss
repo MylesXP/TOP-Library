@@ -30,6 +30,15 @@ body {
             outline: solid rgb(180, 180, 180) 8px;
         }
     }
+
+    .footer {
+        background-color: gainsboro;
+
+        &>h4,
+        a {
+            color: rgb(30, 30, 30);
+        }
+    }
 }
 
 #nav_container {
@@ -224,7 +233,7 @@ body {
     &>h4 {
         margin: 5px;
 
-        &>a{
+        &>a {
             text-decoration: none;
             color: white;
         }
