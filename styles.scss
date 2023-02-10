@@ -211,3 +211,22 @@ body {
 ::placeholder {
     font-family: 'Courier New', Courier, monospace;
 }
+
+.footer {
+    background-color: black;
+    color: white;
+    text-align: center;
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+
+    &>h4 {
+        margin: 5px;
+
+        &>a{
+            text-decoration: none;
+            color: white;
+        }
+    }
+}
