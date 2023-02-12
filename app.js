@@ -8,9 +8,13 @@ let formTitle = document.getElementById('form_book_title');
 let formAuthor = document.getElementById('form_author');
 let formPages = document.getElementById('form_pages');
 let formAddButton = document.getElementById('form_add_button');
-let formRead = document.getElementById('read_toggle')
-// Creating functions for expanding and closing button form logic
+let formRead = document.getElementById('read_toggle');
+let libContainer = document.getElementById('library_container');
+let dButton = document.getElementsByClassName('delete');
+let newBook;
 
+
+// Creating functions button logic
 let toggleMode = function () {
     if(modeTogglerIcon.classList.contains('fa-moon')){
         modeTogglerIcon.classList.remove('fa-moon');
@@ -25,7 +29,6 @@ let toggleMode = function () {
     }
 }
 
-
 let sf = function showForm() {
     overlay.classList.remove('overlay-hide');
     overlay.classList.add('overlay-show');
@@ -34,13 +37,27 @@ let sf = function showForm() {
 let ho = function hideOverlay() {
     overlay.classList.remove('overlay-show');
     overlay.classList.add('overlay-hide');
-    console.log('clicked');
+    formTitle.value = "";
+    formAuthor.value = "";
+    formPages.value = "";
+    formRead.checked = false;
 }
 
-let cb = function closeButton() {
-    overlay.classList.remove('overlay-show');
-    overlay.classList.add('overlay-hide');
-}
+// let cb = function closeButton() {
+//     overlay.classList.remove('overlay-show');
+//     overlay.classList.add('overlay-hide');
+//     formTitle.value = "";
+//     formAuthor.value = "";
+//     formPages.value = "";
+//     formRead.checked = false;
+// }
+
+// for (let i = 0; i < dButton.length; i++){
+//     dButton[i].addEventListener('click', () => {
+//         console.log('hellpo')
+//     })
+// }
+
 
 // Adding event listeners to buttons with above functions as arguments
 addBookButton.addEventListener('click', sf);
@@ -51,10 +68,12 @@ modeToggler.addEventListener('click', toggleMode);
 
 overlay.addEventListener('click', ho);
 
-formCloseButton.addEventListener('click', cb)
+formCloseButton.addEventListener('click', ho)
 
 
 let myLibrary = [];
+
+// addBookToLibrary(x.title ,x.author, x.pages, x.read)
 
 function Book (title, author, pages, read) {
         // the constructor...
@@ -62,32 +81,42 @@ function Book (title, author, pages, read) {
         this.author = author,
         this.pages = pages,
         this.read = read
-        // createBookEntry = function() {
-        //     const div = document.createElement('div');
-        //     div.style.color = 'blue';
-        //     div.style.height = '400px';
-        //     div.style.width = '400px';
-        //     document.appendChild(div)
-        //     const title = document.createElement('p');
-        //     const author = document.createElement('p');
-        //     const pages = document.createElement('p');
-        // }
     }
 
 function submitForm() {
     if(formTitle.value && formAuthor.value && formPages.value){
-        let newBook = new Book(formTitle.value,formAuthor.value,formPages.value, formRead.checked);
+        newBook = new Book(formTitle.value,formAuthor.value,formPages.value, formRead.checked);
         myLibrary.push(newBook);
-        formTitle.value = "";
-        formAuthor.value = "";
-        formPages.value = "";
-        formRead.checked = false;
+        addBookToLibrary()
+        ho();
     }
 }
 
 function addBookToLibrary() {
-  // do stuff here
-}
+        const div = document.createElement('div');
+        const title = document.createElement('p');
+        const author = document.createElement('p');
+        const pages = document.createElement('p');
+        const readStat = document.createElement('p');
+        const deleteButton = document.createElement('button');
+        title.textContent = newBook.title;
+        author.textContent = newBook.author;
+        pages.textContent = newBook.pages;
+        readStat.textContent = newBook.read;
+        deleteButton.textContent = 'Delete'
+        div.classList.add('book');
+        deleteButton.classList.add('delete');
+        deleteButton.setAttribute('onclick','event.stopPropagation()');
+        deleteButton.addEventListener('click', () => {
+            console.log('hellpo')
+        });
+        libContainer.appendChild(div);
+        div.appendChild(title);
+        div.appendChild(author);
+        div.appendChild(pages);
+        div.appendChild(readStat);
+        div.appendChild(deleteButton)
+    };
 
 
 

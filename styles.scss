@@ -3,7 +3,6 @@ body {
     background-color: #323940;
     margin: 0;
     font-family: 'Courier New', Courier, monospace;
-    position: absolute;
 }
 
 .light-mode {
@@ -117,7 +116,14 @@ body {
     color: rgb(255, 212, 71);
 }
 
-// #library_container {}
+#library_container {
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    gap: 20px;
+    align-items: center;
+    margin-top: 30px;
+}
 
 .overlay-hide {
     display: none;
@@ -140,7 +146,7 @@ body {
     display: flex;
     gap: 20px;
     flex-direction: column;
-    justify-content: space-evenly;
+    justify-content: center;
     align-content: center;
     text-align: center;
     border-radius: 8px;
@@ -153,7 +159,7 @@ body {
     right: 0;
     margin-right: 10px;
     margin-top: 8px;
-
+    cursor: pointer;
     // &>i {
     //     color: white;
     // }
@@ -184,6 +190,7 @@ body {
     border: none;
     border-bottom: 2px solid lightgray;
     transition: all 200ms ease-in-out;
+    font-family: 'Courier New', Courier, monospace;
 
     &:focus {
         outline: none;
@@ -221,6 +228,19 @@ body {
     font-family: 'Courier New', Courier, monospace;
 }
 
+.book {
+    color: blue;
+    background-color: white;
+    border-radius: 8px;
+    height: 300px;
+    width: 300px;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
 .footer {
     background-color: black;
     color: white;
@@ -229,7 +249,7 @@ body {
     left: 0;
     bottom: 0;
     width: 100%;
-
+    z-index: 0;
     &>h4 {
         margin: 5px;
 
