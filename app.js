@@ -14,7 +14,7 @@ let dButton = document.getElementsByClassName('delete');
 let newBook;
 
 
-// Creating functions button logic
+// Creating function for Dark/Light mode button logic
 let toggleMode = function () {
     if(modeTogglerIcon.classList.contains('fa-moon')){
         modeTogglerIcon.classList.remove('fa-moon');
@@ -29,10 +29,16 @@ let toggleMode = function () {
     }
 }
 
+modeToggler.addEventListener('click', toggleMode); // Assigning the function to toggler when clicked
+
+
+// Creating functions for hiding and showing forms for use w/ multiple buttons
 let sf = function showForm() {
     overlay.classList.remove('overlay-hide');
     overlay.classList.add('overlay-show');
 }
+
+addBookButton.addEventListener('click', sf); // Assigning the function to outer outer book button when clicked
 
 let ho = function hideOverlay() {
     overlay.classList.remove('overlay-show');
@@ -42,38 +48,13 @@ let ho = function hideOverlay() {
     formPages.value = "";
     formRead.checked = false;
 }
-
-// let cb = function closeButton() {
-//     overlay.classList.remove('overlay-show');
-//     overlay.classList.add('overlay-hide');
-//     formTitle.value = "";
-//     formAuthor.value = "";
-//     formPages.value = "";
-//     formRead.checked = false;
-// }
-
-// for (let i = 0; i < dButton.length; i++){
-//     dButton[i].addEventListener('click', () => {
-//         console.log('hellpo')
-//     })
-// }
-
-
-// Adding event listeners to buttons with above functions as arguments
-addBookButton.addEventListener('click', sf);
-
-formAddButton.addEventListener('click', submitForm())
-
-modeToggler.addEventListener('click', toggleMode);
-
+// Assigning hideOverlay to both overlay and close button as they both have identical functions
 overlay.addEventListener('click', ho);
-
 formCloseButton.addEventListener('click', ho)
 
 
-let myLibrary = [];
-
-// addBookToLibrary(x.title ,x.author, x.pages, x.read)
+// Created Book object constructor
+let myLibrary = []; // Array where Book objects are stored
 
 function Book (title, author, pages, read) {
         // the constructor...
@@ -83,33 +64,51 @@ function Book (title, author, pages, read) {
         this.read = read
     }
 
+
+//Created function for the in-form add book button, used to submit the form
 function submitForm() {
     if(formTitle.value && formAuthor.value && formPages.value){
         newBook = new Book(formTitle.value,formAuthor.value,formPages.value, formRead.checked);
         myLibrary.push(newBook);
-        addBookToLibrary()
+        createBookEntry()
         ho();
     }
 }
 
-function addBookToLibrary() {
+formAddButton.addEventListener('click', submitForm());
+
+
+
+
+
+
+
+
+function createBookEntry() {
         const div = document.createElement('div');
-        const title = document.createElement('p');
+        const title = document.createElement('h3');
         const author = document.createElement('p');
         const pages = document.createElement('p');
         const readStat = document.createElement('p');
         const deleteButton = document.createElement('button');
         title.textContent = newBook.title;
         author.textContent = newBook.author;
-        pages.textContent = newBook.pages;
-        readStat.textContent = newBook.read;
+        pages.textContent = newBook.pages + ' page(s)';
+        readStat.textContent = newBook.read ? 'Read' : "Haven't Read";
         deleteButton.textContent = 'Delete'
         div.classList.add('book');
         deleteButton.classList.add('delete');
+        author.classList.add('book-author');
         deleteButton.setAttribute('onclick','event.stopPropagation()');
+
+
+
         deleteButton.addEventListener('click', () => {
             console.log('hellpo')
         });
+
+
+
         libContainer.appendChild(div);
         div.appendChild(title);
         div.appendChild(author);
