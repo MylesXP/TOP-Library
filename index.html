@@ -12,39 +12,47 @@
 </head>
 
 <body>
-    <div class="overlay-hide" id="overlay">
-        <form class="form" action="" onclick="event.stopPropagation()">
-            <div id="form_content_wrapper">
-                <div id="close_button"><i class="fa-solid fa-square-xmark "></i></i></div>
-                <h3 id="form_title">Enter Book Details</h3>
-                <input type="text" placeholder="Title" class="form-input" id="form_book_title">
-                <input type="text" placeholder="Author" class="form-input" id="form_author">
-                <input type="number" placeholder="Page(s)" min="1" class="form-input" id="form_pages">
-                <div id="read_toggler_wrapper">
-                    <label for="read_toggle">Read?</label>
-                    <input id="read_toggle" type="checkbox">
+    <div id="maincontent">
+        <div class="overlay-hide" id="overlay">
+            <form class="form" action="" onclick="event.stopPropagation()">
+                <div id="form_content_wrapper">
+                    <div id="close_button"><i class="fa-solid fa-square-xmark "></i></i></div>
+                    <h3 id="form_title">Enter Book Details</h3>
+                    <input type="text" placeholder="Title" class="form-input" id="form_book_title">
+                    <input type="text" placeholder="Author" class="form-input" id="form_author">
+                    <input type="number" placeholder="Page(s)" min="1" class="form-input" id="form_pages">
+                    <div id="read_toggler_wrapper">
+                        <label for="read_toggle">Read?</label>
+                        <input id="read_toggle" type="checkbox">
+                    </div>
+                    <button id="form_add_button" type="button" onclick="event.preventDefault(); submitForm()">Add
+                        Book</button>
                 </div>
-                <button id="form_add_button" type="button" onclick="event.preventDefault(); submitForm()">Add
-                    Book</button>
-            </div>
-        </form>
-    </div>
-    <div id="nav_container">
-        <nav>
-            <ul id="nav_items_container">
-                <li class="nav-items" id="nav_logo">eLibrary</li>
-                <li class="nav-items"><button id="mode_toggler"><i id="mode_toggler__icon"
-                            class="fa-solid fa-moon fa-2x"></i></button></li>
-            </ul>
-        </nav>
-    </div>
-    <h1 id="website_title">Welcome to Your Personal Online Library!</h1>
-    <div style="text-align: center;"><button id="book_add__button"><i class="fa-solid fa-plus"></i> Add Book</button>
-    </div>
-    <div id="library_container">
+            </form>
+        </div>
+        <div id="nav_container">
+            <nav>
+                <ul id="nav_items_container">
+                    <li class="nav-items" id="nav_logo">eLibrary</li>
+                    <li class="nav-items"><button id="mode_toggler"><i id="mode_toggler__icon"
+                                class="fa-solid fa-moon fa-2x"></i></button></li>
+                </ul>
+            </nav>
+        </div>
+        <h1 id="website_title">Welcome to Your Personal Online Library!</h1>
+        <div style="text-align: center;"><button id="book_add__button"><i class="fa-solid fa-plus"></i> Add
+                Book</button>
+        </div>
+        <div id="library_container">
 
 
+        </div>
     </div>
-    <div class="footer"><h4>Created By <a target="_blank" href="https://github.com/MylesXP"><i class="fa-brands fa-github"></i> Myles Parkinson</a></h4></div>
+    <div class="footer">
+        <h4>Created By <a target="_blank" href="https://github.com/MylesXP"><i class="fa-brands fa-github"></i> Myles
+                Parkinson</a></h4>
+    </div>
     <script src="app.js"></script>
+</body>
+
 </html>
