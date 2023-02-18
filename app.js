@@ -68,21 +68,19 @@ function Book (title, author, pages, read) {
 //Created function for the in-form add book button, used to submit the form
 function submitForm() {
     if(formTitle.value && formAuthor.value && formPages.value){
-        newBook = new Book(formTitle.value,formAuthor.value,formPages.value, formRead.checked);
-        myLibrary.push(newBook);
+        newBook = new Book(formTitle.value,formAuthor.value,formPages.value, formRead.checked); 
         createBookEntry()
         ho();
+        myLibrary.push(newBook);  
     }
 }
 
+function delElement(){
+    window.event.target.parentNode.remove();
+    myLibrary = myLibrary.filter(x => x.title !== window.event.target.parentNode.getAttribute('data-booktitle'));
+}
+
 formAddButton.addEventListener('click', submitForm());
-
-
-
-
-
-
-
 
 function createBookEntry() {
         const div = document.createElement('div');
@@ -99,15 +97,8 @@ function createBookEntry() {
         div.classList.add('book');
         deleteButton.classList.add('delete');
         author.classList.add('book-author');
-        deleteButton.setAttribute('onclick','event.stopPropagation()');
-
-
-
-        deleteButton.addEventListener('click', () => {
-            console.log('hellpo')
-        });
-
-
+        deleteButton.setAttribute('onmousedown','delElement();');
+        div.setAttribute('data-booktitle', newBook.title);
 
         libContainer.appendChild(div);
         div.appendChild(title);
