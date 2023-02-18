@@ -289,6 +289,9 @@ body {
   bottom: 0;
   width: 100%;
   margin-top: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 .footer > h4 {
   margin: 0;

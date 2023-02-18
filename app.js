@@ -66,16 +66,15 @@ class Book {
 
     toggleRead = function () {
         this.read = this.read ? false : true;
-        // window.event.target.textContent = this.read ? "Read" : 'Not Read';
         if (this.read){
             window.event.target.textContent = "Read";
             window.event.target.classList.add('read');
             window.event.target.classList.remove('not-read');
         } else if (!this.read){
-            window.event.target.textContent = "Not Read"
+            window.event.target.textContent = "Not Read";
             window.event.target.classList.add('not-read');
             window.event.target.classList.remove('read');
-        }
+        };
     };
 }
 
@@ -93,7 +92,7 @@ function submitForm() {
 function delElement(){
     window.event.target.parentNode.remove();
     myLibrary = myLibrary.filter(x => x.title !== window.event.target.parentNode.getAttribute('data-booktitle'));
-}
+};
 
 formAddButton.addEventListener('click', submitForm());
 
@@ -106,15 +105,13 @@ function createBookEntry() {
         const readToggler = document.createElement('button');
         title.textContent = newBook.title;
         author.textContent = newBook.author;
-        pages.textContent = newBook.pages + ' page(s)';
         pages.textContent = `${newBook.pages} ${newBook.pages > 1 ? ' pages' : ' page'}`;
-        // deleteButton.innerHTML = '<i onclick="event.stopPropagation();" class="fa-solid fa-x"></i>';
         deleteButton.innerHTML = '&#10005;';
         readToggler.textContent = newBook.read ? "Read" : 'Not Read';
         div.classList.add('book');
-        readToggler.classList.add('read-toggle');
-        readToggler.classList.add(newBook.read ? 'read' : 'not-read')
         deleteButton.classList.add('delete');
+        readToggler.classList.add('read-toggle');
+        readToggler.classList.add(newBook.read ? 'read' : 'not-read');
         author.classList.add('book-author');
         deleteButton.setAttribute('onclick',' delElement();');
         readToggler.setAttribute('onclick','newBook.toggleRead();');
