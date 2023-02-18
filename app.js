@@ -19,7 +19,7 @@ let toggleMode = function () {
     if(modeTogglerIcon.classList.contains('fa-moon')){
         modeTogglerIcon.classList.remove('fa-moon');
         modeTogglerIcon.classList.add('fa-sun');
-        document.body.classList.add('light-mode')
+        document.body.classList.add('light-mode');
         document.body.style.backgroundColor = 'white';
     } else if(modeTogglerIcon.classList.contains('fa-sun')){
         modeTogglerIcon.classList.remove('fa-sun');
@@ -50,30 +50,45 @@ let ho = function hideOverlay() {
 }
 // Assigning hideOverlay to both overlay and close button as they both have identical functions
 overlay.addEventListener('click', ho);
-formCloseButton.addEventListener('click', ho)
+formCloseButton.addEventListener('click', ho);
 
 
 // Created Book object constructor
 let myLibrary = []; // Array where Book objects are stored
 
-function Book (title, author, pages, read) {
-        // the constructor...
+class Book {
+    constructor(title, author, pages, read) {
         this.title = title,
-        this.author = author,
-        this.pages = pages,
-        this.read = read
-    }
+            this.author = author,
+            this.pages = pages,
+            this.read = read
+    };
+
+    toggleRead = function () {
+        this.read = this.read ? false : true;
+        // window.event.target.textContent = this.read ? "Read" : 'Not Read';
+        if (this.read){
+            window.event.target.textContent = "Read";
+            window.event.target.classList.add('read');
+            window.event.target.classList.remove('not-read');
+        } else if (!this.read){
+            window.event.target.textContent = "Not Read"
+            window.event.target.classList.add('not-read');
+            window.event.target.classList.remove('read');
+        }
+    };
+}
 
 
 //Created function for the in-form add book button, used to submit the form
 function submitForm() {
     if(formTitle.value && formAuthor.value && formPages.value){
         newBook = new Book(formTitle.value,formAuthor.value,formPages.value, formRead.checked); 
-        createBookEntry()
+        createBookEntry();
         ho();
         myLibrary.push(newBook);  
-    }
-}
+    };
+};
 
 function delElement(){
     window.event.target.parentNode.remove();
@@ -87,25 +102,31 @@ function createBookEntry() {
         const title = document.createElement('h3');
         const author = document.createElement('p');
         const pages = document.createElement('p');
-        const readStat = document.createElement('p');
+        // const readStat = document.createElement('p');
         const deleteButton = document.createElement('button');
+        const readToggler = document.createElement('button');
         title.textContent = newBook.title;
         author.textContent = newBook.author;
         pages.textContent = newBook.pages + ' page(s)';
-        readStat.textContent = newBook.read ? 'Read' : "Haven't Read";
-        deleteButton.textContent = 'Delete'
+        // deleteButton.innerHTML = '<i onclick="event.stopPropagation();" class="fa-solid fa-x"></i>';
+        deleteButton.innerHTML = '&#10005;';
+        readToggler.textContent = newBook.read ? "Read" : 'Not Read';
         div.classList.add('book');
+        readToggler.classList.add('read-toggle');
         deleteButton.classList.add('delete');
         author.classList.add('book-author');
-        deleteButton.setAttribute('onmousedown','delElement();');
+        deleteButton.setAttribute('onclick',' delElement();');
+        readToggler.setAttribute('onclick','newBook.toggleRead();');
         div.setAttribute('data-booktitle', newBook.title);
 
         libContainer.appendChild(div);
         div.appendChild(title);
         div.appendChild(author);
         div.appendChild(pages);
-        div.appendChild(readStat);
-        div.appendChild(deleteButton)
+        // div.appendChild(readStat);
+        div.appendChild(readToggler);
+        div.appendChild(deleteButton);
+        
     };
 
 
