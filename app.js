@@ -82,7 +82,7 @@ class Book {
 
 //Created function for the in-form add book button, used to submit the form
 function submitForm() {
-    if(formTitle.value && formAuthor.value && formPages.value){
+    if(formTitle.value && formAuthor.value && formPages.value && formPages.value >= 1){
         newBook = new Book(formTitle.value,formAuthor.value,formPages.value, formRead.checked); 
         createBookEntry();
         ho();
@@ -102,17 +102,18 @@ function createBookEntry() {
         const title = document.createElement('h3');
         const author = document.createElement('p');
         const pages = document.createElement('p');
-        // const readStat = document.createElement('p');
         const deleteButton = document.createElement('button');
         const readToggler = document.createElement('button');
         title.textContent = newBook.title;
         author.textContent = newBook.author;
         pages.textContent = newBook.pages + ' page(s)';
+        pages.textContent = `${newBook.pages} ${newBook.pages > 1 ? ' pages' : ' page'}`;
         // deleteButton.innerHTML = '<i onclick="event.stopPropagation();" class="fa-solid fa-x"></i>';
         deleteButton.innerHTML = '&#10005;';
         readToggler.textContent = newBook.read ? "Read" : 'Not Read';
         div.classList.add('book');
         readToggler.classList.add('read-toggle');
+        readToggler.classList.add(newBook.read ? 'read' : 'not-read')
         deleteButton.classList.add('delete');
         author.classList.add('book-author');
         deleteButton.setAttribute('onclick',' delElement();');
@@ -123,10 +124,8 @@ function createBookEntry() {
         div.appendChild(title);
         div.appendChild(author);
         div.appendChild(pages);
-        // div.appendChild(readStat);
         div.appendChild(readToggler);
         div.appendChild(deleteButton);
-        
     };
 
 
